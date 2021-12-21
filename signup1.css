@@ -17,7 +17,17 @@
     margin-top: 17%;
     text-decoration: underline;
 }
+.ch1{
 
+    margin-top: 20%;
+    margin-left: 10%;
+    transform: rotate(-20deg);
+    width: 70%;
+}
+
+#photo{
+    height: 100%;
+}
 
 .i11{
     
