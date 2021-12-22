@@ -103,11 +103,21 @@
     opacity: 0;
     
 }
+#lp{
+    font-family: var(--fonmain);
+}
 
+.hxp{
+    font-family: var(--fonmain);
+}
 
+.xpa{
+    color: black;
+}
 
-
-
+.xpa:hover{
+    color: #555557;
+}
 
 
 
