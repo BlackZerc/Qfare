@@ -173,5 +173,37 @@
         });
     </script>    
 
+<script>  
+
+  $(document).ready(function() {
+
+	  $('#lp').on('click',function(){
+		  
+    	  var email =$('Email').val();
+    	  var pass=$('Password').val();
+         
+	          $.ajax({
+	              type: "post",
+	              url: "Buyer_signup", //this is my servlet
+	              data:{email:email,pass:pass},
+	              success: function(msg){      
+	            	  msg=msg.trim();
+	                    //  $('#output').append(msg);
+	                    if(msg==="true"){
+	                    	window.location.href="index.jsp";
+	                    }
+	                    else{
+	                    	alert("EMAIL OR PHONE NUMBER ALREADY EXISTS"); 
+	                    }
+	              }
+	          });
+          }    
+      });
+
+  });
+  
+</script>  
+
+
 </body>
 </html>
