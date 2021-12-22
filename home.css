@@ -1,0 +1,37 @@
+:root{
+    --backmain : #f8f7f2;
+    --fonmain : 'Dancing Script', cursive;
+
+}
+
+.btn1{
+    width: 60%;
+    margin-left: 35%;
+    font-family: var(--fonmain);
+    background-color: rgb(117, 116, 116);
+}
+.btn1:not(:hover){
+   background-color: black;
+}
+
+
+#lp1{
+    margin-bottom: 5%;
+    font-family: var(--fonmain);
+}
+#lp22{
+    margin-bottom: 5%;
+    font-family: var(--fonmain);
+}
+#descp{
+    resize: none;
+    height: 200px;
+}
+
+.btnx:focus{
+    box-shadow: none !important;
+}
+
+#filesss{
+    display: none;
+}
