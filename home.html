@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QFARE</title>
+
+
+
+     <link rel="stylesheet" href="index.css">
+     <link rel="stylesheet" href="home.css">
+
+ 
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--Font Awsome-->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"> 
+</head>
+<body>
+
+    <div class="s1 container-fluid">
+        <img class="xd img-fluid" data-scroll draggable="false" src="./Screenshot_3.png">
+    </div>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" id="nb" href="./index.jsp">Home</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#">Log In</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./signup.jsp">Signup</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Support</a>
+              </li>
+            </ul>
+            <form class="d-flex" action="#">
+              
+              <input class="form-control me-2" id="Password" type="search" placeholder="Search">
+              <button class="btn btn-dark" id="lp" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+
+    <!--Part One-->
+    <!--Image Script-->
+    <script>
+        window.addEventListener('load', function(e) {
+        document.querySelector('input[type="file"]').addEventListener('change', function(e) {
+            if (e.target.files && e.target.files[0]) {
+                var img = document.getElementById('imgx');
+                img.onload = () => {
+                    URL.revokeObjectURL(img.src);  // no longer needed, free memory
+                }
+
+                img.src = URL.createObjectURL(e.target.files[Math.floor(Math.random()*4)]); // set src to blob url
+
+                var formData = new FormData();
+                for(var i=0;i<4;i++){
+                    formData.append("image1",e.target.files[i]);
+                }
+
+                console.log(formData.getAll("image1"));
+                
+            }
+        });
+        });
+    </script>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8"></div>
+            <div class="col-md-4" id="divimain">
+                                                             <!-- Button trigger modal -->
+            <button type="button" class=" btn1 btn btn-dark my-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Add Products
+            </button>
+  
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel"> <h2 id="lp1">Description</h2></h5>
+                        <button type="button" class="btn-close btnx" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        
+                        <div class="modal-body">
+                            <div class="card">
+                                <div class="card-body">
+                                   
+                                    <input class="form-control me-2" id="name" placeholder="Product Name">
+                                    <input class="form-control my-2 me-2 " id="basep" placeholder="Base Selling Price">
+                                    <select class="form-select my-2 me-2" name="phcode" aria-label="Default select example">
+                                        <option value="Convenience Products">Convenience Products</option>
+                                        <option value="Shopping Products.">Shopping Products.</option>
+                                        <option value="Specialty Products">Specialty Products</option>
+                                        <option value="Unsought Products">Unsought Products</option>
+                                    </select>
+                                    <input class="form-control my-2 me-2 " type="date" id="timeD" placeholder="Time Duration">
+                                    <textarea class="form-control my-2 me-2 "  id="descp" placeholder="Description"></textarea>
+                                    <label class="my-2" for="filesss">
+                                        <small id="lp1">Required Image (4)</small>
+                                        <img class="img-fluid" id="imgx" src="./dummy.png">
+                                    </label>
+                                    <input type="file"accept="images/*"  hidden  id="filesss" multiple>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-light" id="lp22" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-dark" id="lp1">Understood</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+               
+
+
+
+                
+            </div>
+        </div>
+    </div>
+   
+  
+
+</body>
+</html>
