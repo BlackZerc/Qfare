@@ -14,7 +14,7 @@
  
 
 
-    <!-- Latest compiled and minified CSS -->
+   <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Latest compiled JavaScript -->
@@ -68,21 +68,67 @@
     <!--Image Script-->
     <script>
         window.addEventListener('load', function(e) {
-        document.querySelector('input[type="file"]').addEventListener('change', function(e) {
+        document.getElementById('file1').addEventListener('change', function(e) {
             if (e.target.files && e.target.files[0]) {
-                var img = document.getElementById('imgx');
+                var img = document.getElementById('img1');
                 img.onload = () => {
                     URL.revokeObjectURL(img.src);  // no longer needed, free memory
                 }
 
-                img.src = URL.createObjectURL(e.target.files[Math.floor(Math.random()*4)]); // set src to blob url
+                img.src = URL.createObjectURL(e.target.files[0]); // set src to blob url
 
-                var formData = new FormData();
-                for(var i=0;i<4;i++){
-                    formData.append("image1",e.target.files[i]);
+                
+                
+            }
+        });
+        });
+    </script>
+    <script>
+        window.addEventListener('load', function(e) {
+        document.getElementById('file2').addEventListener('change', function(e) {
+            if (e.target.files && e.target.files[0]) {
+                var img = document.getElementById('img2');
+                img.onload = () => {
+                    URL.revokeObjectURL(img.src);  // no longer needed, free memory
                 }
 
-                console.log(formData.getAll("image1"));
+                img.src = URL.createObjectURL(e.target.files[0]); // set src to blob url
+
+                
+                
+            }
+        });
+        });
+    </script>
+    <script>
+        window.addEventListener('load', function(e) {
+        document.getElementById('file3').addEventListener('change', function(e) {
+            if (e.target.files && e.target.files[0]) {
+                var img = document.getElementById('img3');
+                img.onload = () => {
+                    URL.revokeObjectURL(img.src);  // no longer needed, free memory
+                }
+
+                img.src = URL.createObjectURL(e.target.files[0]); // set src to blob url
+
+                
+                
+            }
+        });
+        });
+    </script>
+    <script>
+        window.addEventListener('load', function(e) {
+        document.getElementById('file4').addEventListener('change', function(e) {
+            if (e.target.files && e.target.files[0]) {
+                var img = document.getElementById('img4');
+                img.onload = () => {
+                    URL.revokeObjectURL(img.src);  // no longer needed, free memory
+                }
+
+                img.src = URL.createObjectURL(e.target.files[0]); // set src to blob url
+
+                
                 
             }
         });
@@ -122,11 +168,30 @@
                                     </select>
                                     <input class="form-control my-2 me-2 " type="date" id="timeD" placeholder="Time Duration">
                                     <textarea class="form-control my-2 me-2 "  id="descp" placeholder="Description"></textarea>
-                                    <label class="my-2" for="filesss">
-                                        <small id="lp1">Required Image (4)</small>
-                                        <img class="img-fluid" id="imgx" src="./dummy.png">
+                                    <label class="my-2" for="file1">
+                                        <small id="lp1">Required Image (1)</small>
+                                        <img class="img-fluid" id="img1" src="./dummy.png">
                                     </label>
-                                    <input type="file"accept="images/*"  hidden  id="filesss" multiple>
+                                    <input type="file"accept="images/*"  hidden  id="file1" multiple>
+
+                                    <label class="my-2" for="file2">
+                                        <small id="lp1">Required Image (2)</small>
+                                        <img class="img-fluid" id="img2" src="./dummy.png">
+                                    </label>
+                                    <input type="file"accept="images/*"  hidden  id="file2" multiple>
+
+                                    <label class="my-2" for="file3">
+                                        <small id="lp1">Required Image (3)</small>
+                                        <img class="img-fluid" id="img3" src="./dummy.png">
+                                    </label>
+                                    <input type="file"accept="images/*"  hidden  id="file3" multiple>
+
+                                    <label class="my-2" for="file4">
+                                        <small id="lp1">Required Image (4)</small>
+                                        <img class="img-fluid" id="img4" src="./dummy.png">
+                                    </label>
+                                    <input type="file"accept="images/*"  hidden  id="file4" multiple>
+
                                 </div>
                             </div>
                         </div>
