@@ -3,10 +3,14 @@
     --fonmain : 'Dancing Script', cursive;
 
 }
+.xs{
+    height: 370px !important;
+}
 
 .btn1{
-    width: 60%;
-    margin-left: 35%;
+    width: 50%;
+    height: 55px;
+    margin-left: 48%;
     font-family: var(--fonmain);
     background-color: rgb(117, 116, 116);
 }
@@ -32,6 +36,17 @@
     box-shadow: none !important;
 }
 
-#filesss{
+#file1{
     display: none;
+}
+.h2s{
+    font-family: var(--fonmain);
+}
+
+
+#hnav{
+    background-color: #490648 !important;
+}
+.nav-link,.navbar-brand{
+    color: white !important;
 }
